@@ -4,7 +4,7 @@ Contributions welcomed!
 
 ![Bangadesh-covid-dashboard](https://github.com/hossainchisty/covid19-dashboard/blob/master/demo/Dashboard(1).png)
 
-![worldwide-covid-dashboard](https://github.com/hossainchisty/covid19-dashboard/blob/master/demo/Dashboard(2).png)
+![worldwide-covid-dashboard](https://github.com/hossainchisty/covid19-dashboard/blob/master/demo/Dashboard(02).png)
 ## Built With
 
 * [Django](https://www.djangoproject.com/) Django is a high-level Web framework that encourages rapid development and clean, pragmatic design.
