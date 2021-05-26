@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load humanize %}
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>COVID-19 Dashboard | Worldwide</title>
+
+    <!-- semantic UI -->
+    <link rel="stylesheet" type='text/css'
+        href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
+    <!--Chart js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css"/>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <!-- Custom fonts for this template-->
+    <link href="{% static '/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{% static '/css/sb-admin-2.min.css' %}" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
+
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-indigo-900 sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-viruses"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">COVID19<sup></sup></div>
+            </a>
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'dashboard' %}">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span></a>
+                <a class="nav-link" href="{% url 'worldwide' %}">
+                    <i class="fas fa-globe"></i>
+                    <span>Worldwide</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+            <li class="nav-item active">
+                <a class="nav-link" href="https://github.com/hossainchisty/covid19-dashboard.git">
+                    <i class="fab fa-github"></i>
+                    <span>Source Code</span></a>
+
+                <a class="nav-link" href="{% url 'resource' %}">
+                    <i class="fas fa-database"></i>
+                    <span>Data</span></a>
+
+            </li>
+
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <div class="container-fluid mt-20">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Global Growth</h1>
+                        <small>Worldwide</small>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- CONFIRMED -->
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                CONFIRMED</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                            {{confirmed | intword}}
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-virus fa-3x text-indigo-500"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- CONFIRMED END -->
+
+                        <!-- RECOVERED -->
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                RECOVERED</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                            {{recovered | intword }}</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-heartbeat fa-3x text-green-500"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- RECOVERED END -->
+
+
+                        <!-- DEATHS -->
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <div class="card border-left-danger shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                DEATHS</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                            {{ deaths | intword }}
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fa fa-skull-crossbones fa-3x text-red-500"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- DEATHS END -->
+
+                    </div>
+                    <!-- Content Row -->
+
+                    <div class="container-fluid">
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <div class="chart-area">
+                                <canvas  id="myChart" width="600" height="300"></canvas>
+                            </div>
+                        </div>
+
+                        <script>
+                            $(document).ready(function () {
+                                var ctx = document.getElementById('myChart').getContext('2d');
+
+                                var colors4 = ['#49A9EA', '#36CAAB', '#00d100', '#f70505'];
+                                var myChart = new Chart(ctx, {
+                                    type: 'line',
+                                    data: {
+                                        labels: ['Active', 'Confirmed', 'Recovered', 'Death'],
+                                        datasets: [{
+                                            label: 'Worldwide',
+                                            data: [{{ active }}, {{ confirmed }}, {{ recovered }}, {{ deaths }}],
+                                            backgroundColor: [
+                                            'rgba(255, 99, 132, 0.2)',
+                                            'rgba(54, 162, 235, 0.2)',
+                                            'rgba(255, 206, 86, 0.2)',
+                                            'rgba(75, 192, 192, 0.2)',
+                                            'rgba(153, 102, 255, 0.2)',
+                                            'rgba(255, 159, 64, 0.2)'
+                                        ],
+                                        
+                                        }]
+                                    },
+                                    options: {
+
+                                    options: {
+                                        event: ['click']
+                                    }
+                                }
+                                    });
+                                });
+                        </script>
+
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{% static '/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static '/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{% static '/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{% static '/js/sb-admin-2.min.js' %}"></script>
+
+
+</body>
+
+</html>

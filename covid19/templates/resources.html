@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>COVID-19 Dashboard | Data</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="{% static '/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+     <!-- Tailwind CSS -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{% static '/css/sb-admin-2.min.css' %}" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- #1A1053  -->
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-indigo-900 sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-viruses"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">COVID19<sup></sup></div>
+            </a>
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'dashboard' %}">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span></a>
+                <a class="nav-link" href="{% url 'worldwide' %}">
+                <i class="fas fa-globe"></i>
+                <span>Worldwide</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+            <li class="nav-item active">
+                <a class="nav-link" href="https://github.com/hossainchisty/covid19-dashboard.git">
+                    <i class="fab fa-github"></i>
+                    <span>Source Code</span></a>
+
+                <a class="nav-link" href="{% url 'resource' %}">
+                    <i class="fas fa-database"></i>
+                <span>Data</span></a>
+
+            </li>
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+        </ul>
+        <!-- End of Sidebar -->
+
+            <div class="container-fluid pt-6">
+                <h2>Data</h2>
+                <p>Data sources used throughout the project.</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="https://github.com/ExpDev07/coronavirus-tracker-api">A tiny Python package for easy access to up-to-date Coronavirus (COVID-19, SARS-CoV-2) cases data.</a></li>
+                    <li class="list-group-item"><a href="https://pypi.org/project/covid">
+                    Python package to get information regarding the novel corona virus provided by Johns Hopkins university and worldometers.info</a></li>
+    
+                </ul>
+            
+                    <!-- Footer -->
+                <footer class="footer">
+                    <div class="row align-items-center justify-content-xl-between">
+                    <div class="col-xl-6">
+                        <div class="text-center text-xl-left ">
+                        <a href="" class="font-weight-bold ml-1 text-muted"
+                            target="_blank">covid19-dashboard</a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="text-center text-xl-right ">
+                        <a href="" class="font-weight-bold ml-1 text-muted" target="_blank">@hossinchisty</a>
+                        
+                        </div>
+                    </div>
+                    </div>
+                </footer>
+            </div>
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+
+</body>
+
+</html>
