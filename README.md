@@ -1,4 +1,4 @@
-# 🦠😷 Django + Chart.js Coronavirus dashboard
+# 🦠😷 Django + Chart.js Coronavirus Dashboard
 ###### Don't forget to leave a [star ⭐!](https://github.com/hossainchisty/covid19-dashboard/stargazers)
 Contributions welcomed! 
 
