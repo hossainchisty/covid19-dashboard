@@ -16,12 +16,12 @@ Contributions welcomed!
 
 To run the app on your local machine, you need Python 3+, installed on your computer. Follow all the steps to run this project.
    
-1.  Create `venv` virtual environment:
+1.  Create virtual environment:
 ```bash
 virtualenv env_name
 ```
     
-2.  Activate `venv` virtual environment:
+2.  Activate virtual environment:
 ```bash
 On Linux - source virtualenv_name/bin/activate
 On Windows - virtualenv_name/Scripts/activate
