@@ -46,3 +46,4 @@ cd covid19-dashboard
 ```python
   python manage.py runserver
 ```
+Thanks ❤
