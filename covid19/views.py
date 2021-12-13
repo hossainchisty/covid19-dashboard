@@ -3,8 +3,6 @@ from datetime import datetime
 from covid import Covid
 import COVID19Py
 
-# Create your views here.
-
 def dashboard(request):
 
     now = datetime.now() 
