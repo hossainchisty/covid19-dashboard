@@ -37,5 +37,5 @@
 
 Author:
 <a href="https://www.linkedin.com/in/hossainchisty/" target="_blank">Hossain Chisty</a><br>
-If you would like to have my help with your team and product, feel free to contact me. 🤓
+If you would like to have my help with your team and product, feel free to contact me.
 <!-- Get in touch - End -->
