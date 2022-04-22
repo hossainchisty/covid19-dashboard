@@ -5,7 +5,7 @@ chardet==4.0.0
 click==7.1.2
 covid==2.4.1
 COVID19Py==0.3.0
-Django==3.2.12
+Django==3.2.13
 idna==2.10
 pydantic==1.8.2
 pytz==2021.1
